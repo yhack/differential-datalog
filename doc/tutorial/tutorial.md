@@ -1036,8 +1036,8 @@ First5(string_slice(p, 0, 5)) :- Phrases(p).
 
 To build this program we must provide a Rust implementation of
 `string_slice()`.  DDlog generates a commented out function prototype
-in `playpen_ddlog/types/lib.rs`.  Do not modify this file; instead, create a new
-file called `playpen.rs` in the same directory:
+in `playpen_ddlog/types/playpen.rs`.  Do not modify this file; instead, create a new
+file called `playpen.rs` in the project root directory:
 
 ```
 pub fn string_slice(x: &String, from: &u64, to: &u64) -> String {
@@ -1046,7 +1046,7 @@ pub fn string_slice(x: &String, from: &u64, to: &u64) -> String {
 ```
 
 DDlog will automatically pickup this file and inline its contents in the
-generated `lib.rs`.
+generated `playpen_ddlog/types/playpen.rs`.
 
 See [more detailed discussion](#implementing-extern-functions-and-types-in-Rust)
 on integrating Rust and DDlog code below.
